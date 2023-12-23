@@ -1,14 +1,23 @@
 import Statistics from './Statistics';
+import styles from './Statistics.module.css';
+import GetRandomColor from './RandomColor';
 
-const StatisticsItem = ({ items }) => {
+const StatisticsItem = ({ title, items }) => {
   return (
-    <ul>
-      {items.map(item => (
-        <li key={item.id}>
-          <Statistics label={item.label} percentage={item.percentage} />
-        </li>
-      ))}
-    </ul>
+    <section className={styles.statistics}>
+      {title && <h2 className={styles.title}>{title}</h2>}
+      <ul className={styles.statlist}>
+        {items.map(item => (
+          <li
+            className={styles.item}
+            style={{ backgroundColor: GetRandomColor() }}
+            key={item.id}
+          >
+            <Statistics label={item.label} percentage={item.percentage} />
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 };
 

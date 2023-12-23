@@ -1,6 +1,7 @@
-const TransactionHistory = ({ type, amount, currency }) => {
+import TransactionHistoryItem from './TransactionHistoryItem';
+const TransactionHistory = ({ items }) => {
   return (
-    <table class="transaction-history">
+    <table className="transaction-history">
       <thead>
         <tr>
           <th>Type</th>
@@ -10,11 +11,15 @@ const TransactionHistory = ({ type, amount, currency }) => {
       </thead>
 
       <tbody>
-        <tr>
-          <td>{type}</td>
-          <td>{amount}</td>
-          <td>{currency}</td>
-        </tr>
+        {items.map(item => (
+          <tr key={item.id}>
+            <TransactionHistoryItem
+              type={item.type}
+              amount={item.amount}
+              currency={item.currency}
+            />
+          </tr>
+        ))}
       </tbody>
     </table>
   );

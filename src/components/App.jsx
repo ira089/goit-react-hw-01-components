@@ -30,16 +30,9 @@ export const App = () => {
         avatar={user.avatar}
         stats={user.stats}
       />
-      <section>
-        <h2>Upload stats</h2>
-        <StatisticsItem items={data} />
-      </section>
+      <StatisticsItem title="Upload stats" items={data} />
       <FriendListItem items={friends} />;
-      <TransactionHistory
-        type={transactions[0].type}
-        amount={transactions[0].amount}
-        currency={transactions[0].currency}
-      />
+      <TransactionHistory items={transactions} />
     </div>
   );
 };
