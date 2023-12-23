@@ -1,11 +1,12 @@
 import Profile from './profile/profile';
-import Statistics from './Statistics/Statistics';
+import StatisticsItem from './Statistics/StatisticsItem';
 import FriendList from './FriendList/FriendList';
 import TransactionHistory from './TransactionHistory/TransactionHistory';
 import user from './data/user';
 import data from './data/data';
 import friends from './data/friends';
 import transactions from './data/transactions';
+import Statistics from './Statistics/Statistics';
 
 export const App = () => {
   console.log(data);
@@ -28,12 +29,15 @@ export const App = () => {
         avatar={user.avatar}
         stats={user.stats}
       />
-
-      <Statistics
+      <section>
+        <h2>Upload stats</h2>
+        <StatisticsItem items={data} />
+      </section>
+      {/* <Statistics
         title="Upload stats"
         label={data[0].label}
         percentage={data[0].percentage}
-      />
+      /> */}
       <FriendList
         avatar={friends[0].avatar}
         name={friends[0].name}

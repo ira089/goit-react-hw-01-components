@@ -1,10 +1,15 @@
-const StatisticsItem = ({ id, label, percentage }) => {
-  // return (
-  //   <li className="item">
-  //     <span className="label">{label}</span>
-  //     <span className="percentage">{percentage}</span>
-  //   </li>
-  // );
+import Statistics from './Statistics';
+
+const StatisticsItem = ({ items }) => {
+  return (
+    <ul>
+      {items.map(item => (
+        <li key={item.id}>
+          <Statistics label={item.label} percentage={item.percentage} />
+        </li>
+      ))}
+    </ul>
+  );
 };
 
 export default StatisticsItem;
