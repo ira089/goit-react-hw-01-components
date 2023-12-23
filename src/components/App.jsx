@@ -7,7 +7,7 @@ import user from './data/user';
 import data from './data/data';
 import friends from './data/friends';
 import transactions from './data/transactions';
-import Statistics from './Statistics/Statistics';
+// import Statistics from './Statistics/Statistics';
 
 export const App = () => {
   console.log(friends);
@@ -34,7 +34,7 @@ export const App = () => {
         <h2>Upload stats</h2>
         <StatisticsItem items={data} />
       </section>
-      <FriendListItem friends={friends} />;
+      <FriendListItem items={friends} />;
       <TransactionHistory
         type={transactions[0].type}
         amount={transactions[0].amount}

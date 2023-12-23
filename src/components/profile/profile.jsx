@@ -1,4 +1,4 @@
-import items from '../data/user';
+// import items from '../data/user';
 
 const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
