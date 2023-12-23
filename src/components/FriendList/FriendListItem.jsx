@@ -1,22 +1,11 @@
 import FriendList from './FriendList';
-
-// const FriendListItem = ({ items }) => {
-//   return (
-//     <ul>
-//       {items.map(item => (
-//         <li key={item.id}>
-//           <FriendList avatar={item.avatar} name={item.name} />
-//         </li>
-//       ))}
-//     </ul>
-//   );
-// };
+import styles from './FriendList.module.css';
 
 const FriendListItem = ({ items }) => {
   return (
-    <ul>
+    <ul className={styles.friendlist}>
       {items.map(item => (
-        <li key={item.id}>
+        <li className={styles.item} key={item.id}>
           <FriendList avatar={item.avatar} name={item.name} />
         </li>
       ))}
