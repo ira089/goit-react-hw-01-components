@@ -1,8 +1,13 @@
 import styles from './FriendList.module.css';
 
-const FriendList = ({ avatar, name }) => {
+const FriendList = ({ avatar, name, isOnline }) => {
   return (
     <>
+      {isOnline ? (
+        <span className={styles.statusgreen}></span>
+      ) : (
+        <span className={styles.statusred}></span>
+      )}
       <img
         className={styles.avatar}
         src={avatar}
