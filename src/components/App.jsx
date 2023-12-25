@@ -8,7 +8,6 @@ import transactions from '../data/transactions';
 import Statistics from './Statistics/Statistics';
 
 export const App = () => {
-  console.log(friends);
   return (
     <div
     // style={{
