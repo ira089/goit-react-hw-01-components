@@ -1,13 +1,11 @@
 import Profile from './profile/profile';
-import StatisticsItem from './Statistics/StatisticsItem';
-// import FriendList from './FriendList/FriendList';
-import FriendListItem from './FriendList/FriendListItem';
+import FriendList from './FriendList/FriendList';
 import TransactionHistory from './TransactionHistory/TransactionHistory';
-import user from './data/user';
-import data from './data/data';
-import friends from './data/friends';
-import transactions from './data/transactions';
-// import Statistics from './Statistics/Statistics';
+import user from '../data/user';
+import data from '../data/data';
+import friends from '../data/friends';
+import transactions from '../data/transactions';
+import Statistics from './Statistics/Statistics';
 
 export const App = () => {
   console.log(friends);
@@ -30,8 +28,8 @@ export const App = () => {
         avatar={user.avatar}
         stats={user.stats}
       />
-      <StatisticsItem title="Upload stats" items={data} />
-      <FriendListItem items={friends} />;
+      <Statistics title="Upload stats" items={data} />
+      <FriendList items={friends} />;
       <TransactionHistory items={transactions} />
     </div>
   );
